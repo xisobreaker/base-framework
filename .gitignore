@@ -1,0 +1,22 @@
+# idea
+.idea
+cmake-build-debug
+cmake-build-release
+
+# vscode
+.vscode
+
+# cmake
+build
+
+# cache
+.cache
+
+# other
+*.swp
+*.engine
+*.deb
+
+# output
+/dist/*
+/output/*
