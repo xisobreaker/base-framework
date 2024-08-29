@@ -1,4 +1,4 @@
-#include "Framework.h"
+#include "Application.h"
 #include "ModuleA.h"
 #include "ModuleB.h"
 #include "ModuleC.h"
@@ -10,10 +10,10 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    Framework  *framework = new Framework();
-    BaseModule *moduleA   = new ModuleA();
-    BaseModule *moduleB   = new ModuleB();
-    BaseModule *moduleC   = new ModuleC();
+    Application *framework = new Application();
+    BaseModule  *moduleA   = new ModuleA();
+    BaseModule  *moduleB   = new ModuleB();
+    BaseModule  *moduleC   = new ModuleC();
 
     // 添加子模块
     framework->addComponent(moduleA);

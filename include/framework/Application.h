@@ -4,11 +4,11 @@
 
 #include <list>
 
-class Framework : public Component
+class Application : public Component
 {
 public:
-    Framework();
-    ~Framework();
+    Application();
+    ~Application();
 
 public:
     void addComponent(Component *component) override;
