@@ -1,8 +1,7 @@
 #include "Application.h"
 
 #include "Component.h"
-
-#include <glog/logging.h>
+#include "GoogleGlog.h"
 
 Application::Application()
 {

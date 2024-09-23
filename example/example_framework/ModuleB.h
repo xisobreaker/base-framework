@@ -1,6 +1,7 @@
 #pragma once
 
 #include "BaseModule.h"
+#include "GoogleGlog.h"
 
 #include <iostream>
 
@@ -13,11 +14,11 @@ public:
 public:
     void startOperator() override
     {
-        std::cout << "ModuleB startOperator" << std::endl;
+        LOG(INFO) << "ModuleB startOperator";
     }
 
     void stopOperator() override
     {
-        std::cout << "ModuleB stopOperator" << std::endl;
+        LOG(WARNING) << "ModuleB stopOperator";
     }
 };

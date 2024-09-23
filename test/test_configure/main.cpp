@@ -1,4 +1,5 @@
-#include <glog/logging.h>
+#include "GoogleGlog.h"
+
 #include <gtest/gtest.h>
 
 TEST(TEST_CONFIGURE, CONFIG_READ)

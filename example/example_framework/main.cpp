@@ -6,10 +6,10 @@
 #include <iostream>
 using namespace std;
 
-#include <glog/logging.h>
-
 int main(int argc, char *argv[])
 {
+    google_glog_initialize("./", argv[0]);
+
     Application *framework = new Application();
     BaseModule  *moduleA   = new ModuleA();
     BaseModule  *moduleB   = new ModuleB();

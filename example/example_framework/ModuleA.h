@@ -2,6 +2,7 @@
 
 #include "BaseModule.h"
 #include "Component.h"
+#include "GoogleGlog.h"
 
 #include <iostream>
 
@@ -14,11 +15,11 @@ public:
 public:
     void startOperator() override
     {
-        std::cout << "ModuleA startOperator" << std::endl;
+        LOG(INFO) << "ModuleA startOperator";
     }
 
     void stopOperator() override
     {
-        std::cout << "ModuleA stopOperator" << std::endl;
+        LOG(WARNING) << "ModuleA stopOperator";
     }
 };

@@ -13,15 +13,18 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/output/lib)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/output/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/output)
 
+# 默认编译示例代码
 if(NOT BUILD_EXAMPLES)
     set(BUILD_EXAMPLES ON)
 endif()
 
 find_package(GLog REQUIRED)
-find_package(Boost REQUIRED)
+find_package(Protobuf REQUIRED)
 
 set(project_include_dirs
-    "${CMAKE_HOME_DIRECTORY}/include/framework")
+    "${CMAKE_HOME_DIRECTORY}/include"
+    "${CMAKE_HOME_DIRECTORY}/include/configure"
+    "${CMAKE_HOME_DIRECTORY}/include/logging")
 
 # 添加子目录
 add_subdirectory(src)
