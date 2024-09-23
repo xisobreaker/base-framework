@@ -2,6 +2,7 @@
 #include "ModuleA.h"
 #include "ModuleB.h"
 #include "ModuleC.h"
+#include "ModuleFactory.h"
 
 #include <iostream>
 using namespace std;
@@ -9,7 +10,7 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     google_glog_initialize("./", argv[0]);
-
+#if 0
     Application *framework = new Application();
     BaseModule  *moduleA   = new ModuleA();
     BaseModule  *moduleB   = new ModuleB();
@@ -30,5 +31,13 @@ int main(int argc, char *argv[])
     framework->stopOperator();
 
     delete framework;
+#endif
+
+    Application *framework = new Application();
+
+    auto factory = get_ModuleFactory_instance();
+    auto moduleA = factory->get_Module("ModuleA");
+    moduleA->startOperator();
+
     return 0;
 }

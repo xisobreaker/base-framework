@@ -5,6 +5,7 @@
 class Component
 {
 public:
+    Component() : m_parent(nullptr){};
     virtual ~Component() = default;
 
 public:

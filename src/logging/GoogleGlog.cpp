@@ -13,6 +13,7 @@ void MyPrefixFormatter(std::ostream &s, const google::LogMessage &m, void * /*da
 void google_glog_initialize(const std::string &log_path, const std::string &log_name)
 {
     FLAGS_max_log_size              = 1800;
+    FLAGS_logtostdout               = true;
     FLAGS_colorlogtostdout          = true;
     FLAGS_stop_logging_if_full_disk = true;
 

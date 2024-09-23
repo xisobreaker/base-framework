@@ -2,6 +2,7 @@
 
 #include "BaseModule.h"
 #include "GoogleGlog.h"
+#include "ModuleFactory.h"
 
 #include <iostream>
 
@@ -22,3 +23,5 @@ public:
         LOG(WARNING) << "ModuleC stopOperator";
     }
 };
+
+MODULE_REGISTER_FACTORY(ModuleC);
