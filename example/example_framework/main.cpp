@@ -4,40 +4,26 @@
 #include "ModuleC.h"
 #include "ModuleFactory.h"
 
+#include <chrono>
 #include <iostream>
+#include <thread>
 using namespace std;
 
 int main(int argc, char *argv[])
 {
-    google_glog_initialize("./", argv[0]);
-#if 0
+    google_glog_initialize(".", argv[0]);
+
     Application *framework = new Application();
-    BaseModule  *moduleA   = new ModuleA();
-    BaseModule  *moduleB   = new ModuleB();
-    BaseModule  *moduleC   = new ModuleC();
 
-    // 添加子模块
-    framework->addComponent(moduleA);
-    framework->addComponent(moduleB);
-    framework->addComponent(moduleC);
+    framework->init(".");
+    framework->start();
 
-    // 启动子模块
-    framework->startOperator();
+    for (int i = 0; i < 1; i++) {
+        this_thread::sleep_for(chrono::milliseconds(1000));
+    }
 
-    // 停止模块 B 并从  framework 内删除
-    moduleB->stopOperator();
-    delete moduleB;
-
-    framework->stopOperator();
-
+    framework->stop();
     delete framework;
-#endif
-
-    Application *framework = new Application();
-
-    auto factory = get_ModuleFactory_instance();
-    auto moduleA = factory->get_Module("ModuleA");
-    moduleA->startOperator();
 
     return 0;
 }

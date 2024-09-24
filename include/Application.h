@@ -3,6 +3,7 @@
 #include "Component.h"
 
 #include <list>
+#include <mutex>
 
 class Application : public Component
 {
@@ -10,12 +11,16 @@ public:
     Application();
     ~Application();
 
-public:
+protected:
     void addComponent(Component *component) override;
     void removeComponent(Component *component) override;
-    void startOperator() override;
-    void stopOperator() override;
+
+public:
+    bool init(const std::string &config_path) override;
+    void start() override;
+    void stop() override;
 
 private:
+    std::mutex             m_componentLock;
     std::list<Component *> m_componentList;
 };

@@ -22,8 +22,11 @@ public:
 public:
     virtual void addComponent(Component *component)    = 0;
     virtual void removeComponent(Component *component) = 0;
-    virtual void startOperator()                       = 0;
-    virtual void stopOperator()                        = 0;
+
+public:
+    virtual bool init(const std::string &config_path) = 0;
+    virtual void start()                              = 0;
+    virtual void stop()                               = 0;
 
 private:
     Component *m_parent;

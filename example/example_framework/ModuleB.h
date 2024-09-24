@@ -13,15 +13,20 @@ public:
     ~ModuleB(){};
 
 public:
-    void startOperator() override
+    bool init(const std::string &config_path) override
+    {
+        return true;
+    }
+
+    void start() override
     {
         LOG(INFO) << "ModuleB startOperator";
     }
 
-    void stopOperator() override
+    void stop() override
     {
         LOG(WARNING) << "ModuleB stopOperator";
     }
 };
 
-MODULE_REGISTER_FACTORY(ModuleB);
+MODULE_REGISTER_FACTORY(ModuleB, "ModuleB");

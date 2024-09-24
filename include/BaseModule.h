@@ -8,7 +8,7 @@ public:
     BaseModule();
     virtual ~BaseModule();
 
-public:
-    virtual void addComponent(Component *component) override;
-    virtual void removeComponent(Component *component) override;
+private:
+    void addComponent(Component *component) final;
+    void removeComponent(Component *component) final;
 };
