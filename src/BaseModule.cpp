@@ -2,6 +2,8 @@
 
 #include "Component.h"
 
+namespace xiso {
+
 BaseModule::BaseModule()
 {
 }
@@ -20,3 +22,5 @@ void BaseModule::addComponent(Component *component)
 void BaseModule::removeComponent(Component *component)
 {
 }
+
+} // namespace xiso

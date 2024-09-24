@@ -2,6 +2,8 @@
 
 #include <mutex>
 
+namespace xiso {
+
 template <typename T>
 class Singleton
 {
@@ -36,3 +38,5 @@ std::mutex Singleton<T>::m_mutex;
 
 template <typename T>
 T *Singleton<T>::m_instance = nullptr;
+
+} // namespace xiso

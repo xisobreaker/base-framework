@@ -3,6 +3,8 @@
 #include <google/protobuf/message.h>
 #include <string>
 
+namespace xiso {
+
 /**
  * @brief protobuf 文件数据读取
  *
@@ -22,3 +24,5 @@ bool protobuf_read_from_file(google::protobuf::Message &message, const std::stri
  * @return false
  */
 bool protobuf_write_to_file(const google::protobuf::Message &message, const std::string &filename);
+
+} // namespace xiso

@@ -1,5 +1,7 @@
 #include "ModuleFactory.h"
 
+namespace xiso {
+
 ModuleFactory &ModuleFactory::get_instance()
 {
     static ModuleFactory instance;
@@ -13,3 +15,5 @@ BaseModule *ModuleFactory::module_create(const std::string &name)
     }
     return m_modules_creator[name]();
 }
+
+} // namespace xiso

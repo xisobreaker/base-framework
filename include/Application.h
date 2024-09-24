@@ -5,6 +5,8 @@
 #include <list>
 #include <mutex>
 
+namespace xiso {
+
 class Application : public Component
 {
 public:
@@ -24,3 +26,5 @@ private:
     std::mutex             m_componentLock;
     std::list<Component *> m_componentList;
 };
+
+} // namespace xiso

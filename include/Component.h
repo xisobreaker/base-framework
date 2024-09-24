@@ -2,6 +2,8 @@
 
 #include <iostream>
 
+namespace xiso {
+
 class Component
 {
 public:
@@ -31,3 +33,5 @@ public:
 private:
     Component *m_parent;
 };
+
+} // namespace xiso

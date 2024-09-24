@@ -11,9 +11,9 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    google_glog_initialize(".", argv[0]);
+    xiso::google_glog_initialize(".", argv[0]);
 
-    Application *framework = new Application();
+    xiso::Application *framework = new xiso::Application();
 
     framework->init(".");
     framework->start();

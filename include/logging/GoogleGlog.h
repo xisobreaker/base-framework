@@ -11,6 +11,8 @@
 #define GLOG_USE_GLOG_EXPORT
 #include <glog/logging.h>
 
+namespace xiso {
+
 /**
  * @brief glog 初始化
  *
@@ -18,3 +20,5 @@
  * @param log_name
  */
 void google_glog_initialize(const std::string &log_path, const std::string &log_name);
+
+} // namespace xiso

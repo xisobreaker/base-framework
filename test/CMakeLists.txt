@@ -1,3 +1,3 @@
 find_package(GTest REQUIRED)
 
-add_subdirectory(test_configure)
+add_subdirectory(test_component)

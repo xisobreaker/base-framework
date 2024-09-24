@@ -1,6 +1,6 @@
 syntax = "proto2";
 
-package base;
+package xiso;
 
 message ComponentParam {
     required string module_name = 1;

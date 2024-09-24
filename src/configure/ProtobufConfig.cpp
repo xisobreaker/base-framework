@@ -5,6 +5,8 @@
 #include <iterator>
 #include <sstream>
 
+namespace xiso {
+
 bool protobuf_read_from_file(google::protobuf::Message &message, const std::string &filename)
 {
     std::ifstream ifile(filename);
@@ -39,3 +41,5 @@ bool protobuf_write_to_file(const google::protobuf::Message &message, const std:
     ofile.close();
     return true;
 }
+
+} // namespace xiso

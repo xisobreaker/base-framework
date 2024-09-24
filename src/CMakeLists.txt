@@ -1,4 +1,4 @@
-project(Framework VERSION 0.0.1)
+project(xiso_framework VERSION 0.0.1)
 
 include_directories(${project_include_dirs})
 

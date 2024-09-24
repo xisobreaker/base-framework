@@ -2,6 +2,8 @@
 
 #include <iomanip>
 
+namespace xiso {
+
 void MyPrefixFormatter(std::ostream &s, const google::LogMessage &m, void * /*data*/)
 {
     s << "[" << std::setw(4) << 1900 + m.time().year() << std::setw(2) << 1 + m.time().month() << std::setw(2) << m.time().day() << ' '
@@ -23,3 +25,5 @@ void google_glog_initialize(const std::string &log_path, const std::string &log_
     google::EnableLogCleaner(std::chrono::hours(24) * 7);
     google::InstallPrefixFormatter(&MyPrefixFormatter);
 }
+
+} // namespace xiso

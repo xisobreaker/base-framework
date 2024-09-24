@@ -10,6 +10,8 @@
 #include <mutex>
 #include <thread>
 
+namespace xiso {
+
 Application::Application()
 {
 }
@@ -40,7 +42,7 @@ void Application::removeComponent(Component *component)
 bool Application::init(const std::string &config_path)
 {
     // 读取配置文件
-    base::ApplicationParam param;
+    xiso::ApplicationParam param;
     std::string            config_file = config_path + "/" + "application.conf";
     if (!protobuf_read_from_file(param, config_file)) {
         LOG(ERROR) << "read config file " << config_file << " failed!";
@@ -106,3 +108,5 @@ void Application::stop()
             m_threads[i]->join();
     }
 }
+
+} // namespace xiso

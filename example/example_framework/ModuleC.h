@@ -6,7 +6,7 @@
 
 #include <iostream>
 
-class ModuleC : public BaseModule
+class ModuleC : public xiso::BaseModule
 {
 public:
     ModuleC(){};

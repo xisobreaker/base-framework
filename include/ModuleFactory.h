@@ -6,6 +6,8 @@
 #include <memory>
 #include <unordered_map>
 
+namespace xiso {
+
 template <typename T>
 inline std::unique_ptr<T> create_unique_ptr()
 {
@@ -43,8 +45,10 @@ private:
     std::unordered_map<std::string, std::function<BaseModule *()>> m_modules_creator;
 };
 
+} // namespace xiso
+
 /**
  * @brief register to factory
  *
  */
-#define MODULE_REGISTER_FACTORY(T, key) static ModuleFactory::Register_t<T> g_##T##_Register(key)
+#define MODULE_REGISTER_FACTORY(T, key) static xiso::ModuleFactory::Register_t<T> g_##T##_Register(key)
