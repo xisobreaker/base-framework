@@ -3,6 +3,7 @@
 #include "Component.h"
 
 #include <list>
+#include <memory>
 #include <mutex>
 
 namespace xiso {

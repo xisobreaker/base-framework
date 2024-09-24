@@ -18,6 +18,8 @@ endforeach()
 
 file(GLOB_RECURSE PROTO_SRCS "proto/*.pb.cc")
 
+aux_source_directory(./common DIR_SOURCES)
+aux_source_directory(./component DIR_SOURCES)
 aux_source_directory(./configure DIR_SOURCES)
 aux_source_directory(./logging DIR_SOURCES)
 aux_source_directory(. DIR_SOURCES)

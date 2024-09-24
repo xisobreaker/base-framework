@@ -24,6 +24,7 @@ find_package(Protobuf REQUIRED)
 set(project_include_dirs
     "${CMAKE_HOME_DIRECTORY}/include/framework"
     "${CMAKE_HOME_DIRECTORY}/include/framework/common"
+    "${CMAKE_HOME_DIRECTORY}/include/framework/component"
     "${CMAKE_HOME_DIRECTORY}/include/framework/configure"
     "${CMAKE_HOME_DIRECTORY}/include/framework/logging")
 

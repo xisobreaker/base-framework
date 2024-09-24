@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     framework->init(".");
     framework->start();
 
-    for (int i = 0; i < 1; i++) {
+    for (int i = 0; i < 10; i++) {
         this_thread::sleep_for(chrono::milliseconds(1000));
     }
 

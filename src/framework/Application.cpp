@@ -3,6 +3,7 @@
 #include "Component.h"
 #include "GoogleGlog.h"
 #include "ModuleFactory.h"
+#include "MonitorModule.h"
 #include "ProtobufConfig.h"
 #include "proto/ApplicationParam.pb.h"
 
@@ -49,6 +50,11 @@ bool Application::init(const std::string &config_path)
         return false;
     }
 
+    // 开启性能监控组件
+    if (param.has_enable_monitor() && param.enable_monitor())
+        addComponent(new MonitorModule());
+
+    // 组件创建
     auto &factory = ModuleFactory::get_instance();
     for (int i = 0; i < param.components_size(); i++) {
         auto component_param = param.components(i);
@@ -64,6 +70,7 @@ bool Application::init(const std::string &config_path)
             addComponent(module);
     }
 
+    // 组件初始化
     std::lock_guard<std::mutex> guard(m_componentLock);
     for (Component *component : m_componentList) {
         component->init(config_path);
