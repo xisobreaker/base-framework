@@ -22,9 +22,10 @@ find_package(GLog REQUIRED)
 find_package(Protobuf REQUIRED)
 
 set(project_include_dirs
-    "${CMAKE_HOME_DIRECTORY}/include"
-    "${CMAKE_HOME_DIRECTORY}/include/configure"
-    "${CMAKE_HOME_DIRECTORY}/include/logging")
+    "${CMAKE_HOME_DIRECTORY}/include/framework"
+    "${CMAKE_HOME_DIRECTORY}/include/framework/common"
+    "${CMAKE_HOME_DIRECTORY}/include/framework/configure"
+    "${CMAKE_HOME_DIRECTORY}/include/framework/logging")
 
 # 添加子目录
 add_subdirectory(src)

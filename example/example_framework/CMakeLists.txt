@@ -9,3 +9,5 @@ target_link_libraries(${PROJECT_NAME} glog)
 target_link_libraries(${PROJECT_NAME} xiso_framework)
 
 add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
+
+file(COPY application.conf DESTINATION ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})

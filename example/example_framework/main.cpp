@@ -6,6 +6,7 @@
 
 #include <chrono>
 #include <iostream>
+#include <memory>
 #include <thread>
 using namespace std;
 
@@ -13,7 +14,7 @@ int main(int argc, char *argv[])
 {
     xiso::google_glog_initialize(".", argv[0]);
 
-    xiso::Application *framework = new xiso::Application();
+    auto framework = std::make_shared<xiso::Application>();
 
     framework->init(".");
     framework->start();
@@ -23,7 +24,6 @@ int main(int argc, char *argv[])
     }
 
     framework->stop();
-    delete framework;
 
     return 0;
 }
