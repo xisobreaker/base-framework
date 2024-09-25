@@ -13,6 +13,16 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/output/lib)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/output/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/output)
 
+# x86 系统架构
+if(${CMAKE_SYSTEM_PROCESSOR} STREQUAL x86_64)
+    message(STATUS "Build with x86_64")
+endif()
+
+# aarch 系统架构
+if(${CMAKE_SYSTEM_PROCESSOR} STREQUAL aarch64)
+    message(STATUS "Build with aarch64")
+endif()
+
 # 默认编译示例代码
 if(NOT BUILD_EXAMPLES)
     set(BUILD_EXAMPLES ON)
